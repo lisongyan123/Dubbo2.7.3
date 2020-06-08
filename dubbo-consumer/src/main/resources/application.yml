@@ -1,0 +1,17 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: dubbo-consumer
+
+dubbo:
+  registry:
+    address: zookeeper://127.0.0.1:2182
+  consumer:
+    # 全局性设置负载均衡方式
+    loadbalance: leastactive
+
+project:
+  service:
+    version: 1.0.0
