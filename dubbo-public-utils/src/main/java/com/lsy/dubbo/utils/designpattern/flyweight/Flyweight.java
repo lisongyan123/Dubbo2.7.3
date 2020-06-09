@@ -7,7 +7,7 @@ import java.util.HashMap;
  * 可以解决共享内存空间问题
  */
 public class Flyweight {
-    private static HashMap<String,Shared> map = new HashMap<>();
+    private static HashMap<String,Shared> map = new HashMap();
     /**从内存取出对象*/
     public static Shared getFlyWeight(String extrinsic) {
         Shared share;

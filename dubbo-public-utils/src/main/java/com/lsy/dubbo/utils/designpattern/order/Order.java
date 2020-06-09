@@ -49,7 +49,6 @@ class Control {
 }
 
 class NoCommand implements Command{
-    @Override
     public void execute() {}
 }
 
@@ -61,7 +60,6 @@ class QuickCommand implements Command {
         this.commands = commands;
     }
 
-    @Override
     public void execute() {
         Stream.of(commands).forEach(v->v.execute());
     }
@@ -109,7 +107,6 @@ class LightOff implements Command {
         this.light = light;
     }
 
-    @Override
     public void execute() {
         light.off();
     }
@@ -123,7 +120,6 @@ class LightOn implements Command {
         this.light = light;
     }
 
-    @Override
     public void execute() {
         light.on();
     }
@@ -137,7 +133,6 @@ class ComputeOff implements Command {
         this.computer = computer;
     }
 
-    @Override
     public void execute() {
         computer.off();
     }
@@ -151,7 +146,6 @@ class ComputeOn implements Command {
         this.computer = computer;
     }
 
-    @Override
     public void execute() {
         computer.on();
     }
@@ -165,7 +159,6 @@ class DoorOpen implements Command {
         this.door = door;
     }
 
-    @Override
     public void execute() {
         door.open();
     }
@@ -179,7 +172,6 @@ class DoorClose implements Command {
         this.door = door;
     }
 
-    @Override
     public void execute() {
         door.close();
     }

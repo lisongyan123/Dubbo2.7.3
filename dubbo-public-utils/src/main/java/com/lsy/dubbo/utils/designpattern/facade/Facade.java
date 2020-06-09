@@ -1,6 +1,15 @@
 package com.lsy.dubbo.utils.designpattern.facade;
 
+/**
+ * 外观模式：为多个复杂的子系统提供一个一致的接口，使这些子系统更加容易被访问。
+ */
 class Facade {
+
+    public static void main(String[] args) {
+        Facade facade = new Facade();
+        facade.method();
+    }
+
     private System1 system1 = new System1();
     private System2 system2 = new System2();
     private System3 system3 = new System3();
@@ -8,11 +17,6 @@ class Facade {
         system1.method();
         system2.method();
         system3.method();
-    }
-
-    public static void main(String[] args) {
-        Facade facade = new Facade();
-        facade.method();
     }
 }
 

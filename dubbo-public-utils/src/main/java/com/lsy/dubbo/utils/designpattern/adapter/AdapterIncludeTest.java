@@ -10,7 +10,6 @@ interface Inter2 {
 
 class Impl1 implements Inter1 {
 
-    @Override
     public void func1() {
         System.out.println("方法一执行");
     }
@@ -19,7 +18,6 @@ class Impl1 implements Inter1 {
 
 class Impl2 extends Impl1 implements Inter2 {
 
-    @Override
     public void func2() {
         System.out.println("方法二执行,包含了方法1");
         func1();
