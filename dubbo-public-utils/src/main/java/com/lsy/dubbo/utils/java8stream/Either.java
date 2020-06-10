@@ -17,6 +17,7 @@ interface CheckedFunction<T,R> {
     R apply(T t) throws Exception;
 }
 
+
 @Slf4j
 /**
  * 代码包装成Either类型

@@ -25,17 +25,16 @@ public class LambdaExceptionUtil {
             try {
                 return function.apply(t);
             } catch (Exception exception) {
-                throwActualException(exception);
+                doThrow(exception);
                 return null;
             }
         };
     }
 
     @SuppressWarnings("unchecked")
-    private static <E extends Exception> void throwActualException(Exception exception) throws E {
+    private static <E extends Exception> void doThrow(Exception exception) throws E {
         throw (E) exception;
     }
-
 }
 
 class TestLambdaExceptionUtil {
