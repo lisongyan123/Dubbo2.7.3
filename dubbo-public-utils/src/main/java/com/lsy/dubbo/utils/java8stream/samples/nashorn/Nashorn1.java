@@ -1,6 +1,6 @@
 package com.lsy.dubbo.utils.java8stream.samples.nashorn;
 
-import com.winterbe.java8.samples.lambda.Person;
+import com.lsy.dubbo.utils.java8stream.lambdasinaction.chap10.Person;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;

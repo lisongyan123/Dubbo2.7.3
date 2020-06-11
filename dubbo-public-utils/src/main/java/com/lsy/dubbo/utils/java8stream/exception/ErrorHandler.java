@@ -1,4 +1,4 @@
-package com.lsy.dubbo.utils.java8stream;
+package com.lsy.dubbo.utils.java8stream.exception;
 
 import io.vavr.control.Try;
 import lombok.Data;
@@ -67,18 +67,19 @@ public class ErrorHandler {
     private static void  doSomeThing3() {
         log.error("接口异常了啦");
     }
-}
 
+    @Data
+    public static class User {
+        Long id;
+        String name;
+        Integer age;
 
-@Data
-class User {
-    Long id;
-    String name;
-    Integer age;
-
-    public User(Long id, String name, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
+        public User(Long id, String name, Integer age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
     }
 }
+
+

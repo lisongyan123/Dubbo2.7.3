@@ -1,13 +1,8 @@
-package com.lsy.dubbo.utils.java8stream;
+package com.lsy.dubbo.utils.java8stream.exception;
 
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-/**
- * Throw unchecker
- * @author SeregaLBN
- * how to use - see unit test
- */
 public class Unthrow {
 
     private static Integer transform(String value) throws Exception {
@@ -39,9 +34,6 @@ public class Unthrow {
     public static<R, E1 extends Exception, E2 extends Exception, E3 extends Exception, E4 extends Exception> Stream<R> of4(Stream<R> stream) throws E1, E2, E3, E4 {
         return stream;
     }
-
-
-    ////////////////////////////////// interfaces ProcedureN //////////////////////////////////
 
     /** like as {@link java.lang.Runnable} */
     @FunctionalInterface

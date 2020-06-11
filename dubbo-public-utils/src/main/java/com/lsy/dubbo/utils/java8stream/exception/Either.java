@@ -1,22 +1,9 @@
-package com.lsy.dubbo.utils.java8stream;
+package com.lsy.dubbo.utils.java8stream.exception;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import java.util.Optional;
 import java.util.function.Function;
-
-
-
-/**
- * 原接口是不支持抛弃异常的 现在我就弄一个支持抛弃异常的接口
- * @param <T>
- * @param <R>
- */
-@FunctionalInterface
-interface CheckedFunction<T,R> {
-    R apply(T t) throws Exception;
-}
-
 
 @Slf4j
 /**
@@ -116,6 +103,16 @@ public class Either<L, R> {
                 return Either.Left(Pair.of(ex,t));
             }
         };
+    }
+
+    /**
+     * 原接口是不支持抛弃异常的 现在我就弄一个支持抛弃异常的接口
+     * @param <T>
+     * @param <R>
+     */
+    @FunctionalInterface
+    interface CheckedFunction<T,R> {
+        R apply(T t) throws Exception;
     }
 }
 

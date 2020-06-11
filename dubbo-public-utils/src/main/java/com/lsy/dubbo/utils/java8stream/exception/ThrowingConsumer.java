@@ -1,4 +1,4 @@
-package com.lsy.dubbo.utils.java8stream;
+package com.lsy.dubbo.utils.java8stream.exception;
 
 import java.util.ArrayList;
 import java.util.List;

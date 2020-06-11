@@ -1,8 +1,7 @@
 package com.lsy.dubbo.utils.java8stream.samples.nashorn;
 
-import com.winterbe.java8.samples.lambda.Person;
+import com.lsy.dubbo.utils.java8stream.samples.lambda.Person;
 import jdk.nashorn.api.scripting.NashornScriptEngine;
-
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
