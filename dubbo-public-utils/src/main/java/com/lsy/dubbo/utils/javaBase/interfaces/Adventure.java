@@ -1,7 +1,5 @@
 package com.lsy.dubbo.utils.javaBase.interfaces;
 
-
-
 public class Adventure {
 
     interface CanFight {

@@ -6,38 +6,38 @@ public class HorrorShow {
         void menace();
     }
 
-    interface DangerousMonster extends Monster {
-        void destroy();
-    }
-
     interface Lethal {
         void kill();
     }
 
-    static class DragonZilla implements DangerousMonster {
-        @Override
-        public void menace() {}
-
-        @Override
-        public void destroy() {}
+    interface DangerousMonster extends Monster {
+        void destroy();
     }
 
     interface Vampire extends DangerousMonster, Lethal {
         void drinkBlood();
     }
 
+    static class DragonZilla implements DangerousMonster {
+        @Override
+        public void menace() {System.out.println("DragonZilla : menace");}
+
+        @Override
+        public void destroy() {System.out.println("DragonZilla : destroy");}
+    }
+
     static class VeryBadVampire implements Vampire {
         @Override
-        public void menace() {}
+        public void menace() {System.out.println("VeryBadVampire : menace");}
 
         @Override
-        public void destroy() {}
+        public void destroy() {System.out.println("VeryBadVampire : destroy");}
 
         @Override
-        public void kill() {}
+        public void kill() {System.out.println("VeryBadVampire : kill");}
 
         @Override
-        public void drinkBlood() {}
+        public void drinkBlood() {System.out.println("VeryBadVampire : drinkBlood");}
     }
 
     static void u(Monster b) {

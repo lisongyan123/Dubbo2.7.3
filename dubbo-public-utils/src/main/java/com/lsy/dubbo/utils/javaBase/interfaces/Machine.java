@@ -40,6 +40,11 @@ public class Machine {
         }
     }
 
+    /**
+     * Bing
+     * Crack
+     * Twist
+     */
     public static void main(String[] args) {
         Operations.runOps(new Bing(), new Crack(), new Twist());
     }

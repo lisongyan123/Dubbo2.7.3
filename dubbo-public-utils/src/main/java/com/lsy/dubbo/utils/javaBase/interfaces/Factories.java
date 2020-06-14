@@ -11,6 +11,9 @@ public class Factories {
         Service getService();
     }
 
+    /**
+     * 具体类
+     */
     static class Service1 implements Service {
         Service1() {System.out.println("Service1");} // Package access
 
@@ -25,13 +28,6 @@ public class Factories {
         }
     }
 
-    static class Service1Factory implements ServiceFactory {
-        @Override
-        public Service getService() {
-            return new Service1();
-        }
-    }
-
     static class Service2 implements Service {
         Service2() {System.out.println("Service2");} // Package access
 
@@ -43,6 +39,16 @@ public class Factories {
         @Override
         public void method2() {
             System.out.println("Service2 method2");
+        }
+    }
+
+    /**
+     * 工厂类
+     */
+    static class Service1Factory implements ServiceFactory {
+        @Override
+        public Service getService() {
+            return new Service1();
         }
     }
 
@@ -61,7 +67,6 @@ public class Factories {
 
     public static void main(String[] args) {
         serviceConsumer(new Service1Factory());
-        // Services are completely interchangeable:
         serviceConsumer(new Service2Factory());
     }
 }

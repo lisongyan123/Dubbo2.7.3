@@ -1,9 +1,9 @@
 package com.lsy.dubbo.utils.javaBase.enums;
 
-
-
-/**枚举实例天生就具备整数值的次序，
- * 可以在 switch 语句中使用 enum。*/
+/**
+ * 枚举实例天生就具备整数值的次序，
+ * 可以在 switch 语句中使用 enum。
+ */
 public class TrafficLight {
 
     enum Signal { GREEN, YELLOW, RED, }

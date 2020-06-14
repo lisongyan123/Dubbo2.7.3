@@ -20,6 +20,10 @@ public class JimTest {
             Jim1.super.jim();
         }
 
+        /**
+         * Jim2::jim
+         * Jim1::jim
+         */
         public static void main(String[] args) {
             new Jim().jim();
         }

@@ -22,6 +22,11 @@ public class Interface {
         }
     }
 
+    /**
+     * firstMethod
+     * secondMethod
+     * newMethod
+     */
     public static void main(String[] args) {
         AnInterface i = new InterfaceImpl();
         i.firstMethod();
