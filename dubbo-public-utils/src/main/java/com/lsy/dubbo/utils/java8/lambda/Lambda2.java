@@ -39,8 +39,8 @@ public class Lambda2 {
         System.out.println(person.firstName + person.lastName);
 
         //BiConsumer Example
-        BiConsumer<String, Integer> printKeyAndValue
-                = (key,value) -> System.out.println(key+"-"+value);
+
+        BiConsumer<String, Integer> printKeyAndValue = (key,value) -> System.out.println(key+"-"+value);
 
         printKeyAndValue.accept("One",1);
         printKeyAndValue.accept("Two",2);

@@ -1,5 +1,6 @@
 package com.lsy.dubbo.utils.java8.interfaces;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
@@ -7,11 +8,22 @@ import java.util.function.Function;
  */
 public class Functions {
     public static void main(String[] args) {
+        System.out.println("============Function============");
         Function<Integer,Integer> A= i->i+1;
         Function<Integer,Integer> B=i->i*i;
         System.out.println("F1:"+B.apply(A.apply(5)));
         System.out.println("F1:"+B.compose(A).apply(5));
         System.out.println("F2:"+A.apply(B.apply(5)));
         System.out.println("F2:"+B.andThen(A).apply(5));
+
+        System.out.println("============BiFunction============");
+        Functions test = new Functions();
+        System.out.println(test.compute(2, 3, (v1, v2) -> v1 + v2, v2 -> v2 * v2));
+    }
+
+
+
+    public int compute(int a, int b, BiFunction<Integer, Integer, Integer> biFunction, Function<Integer, Integer> function) {
+        return biFunction.andThen(function).apply(a, b);
     }
 }
