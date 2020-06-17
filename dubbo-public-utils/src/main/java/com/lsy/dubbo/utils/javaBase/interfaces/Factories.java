@@ -12,7 +12,7 @@ public class Factories {
     }
 
     /**
-     * 具体类
+     * 抽象类
      */
     static class Service1 implements Service {
         Service1() {System.out.println("Service1");} // Package access
@@ -59,6 +59,10 @@ public class Factories {
         }
     }
 
+    /**
+     * 具体类
+     * @param fact
+     */
     public static void serviceConsumer(ServiceFactory fact) {
         Service s = fact.getService();
         s.method1();

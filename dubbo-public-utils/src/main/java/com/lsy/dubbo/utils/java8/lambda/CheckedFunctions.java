@@ -4,11 +4,6 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-/**
- * Utilities for hassle-free usage of lambda expressions who throw checked exceptions.
- *
- * @author Benjamin Winterberg
- */
 public final class CheckedFunctions {
 
     @FunctionalInterface
@@ -26,14 +21,6 @@ public final class CheckedFunctions {
         T apply(F input) throws Exception;
     }
 
-    /**
-     * Return a function which rethrows possible checked exceptions as runtime exception.
-     *
-     * @param function
-     * @param <F>
-     * @param <T>
-     * @return
-     */
     public static <F, T> Function<F, T> function(CheckedFunction<F, T> function) {
         return input -> {
             try {
@@ -48,13 +35,6 @@ public final class CheckedFunctions {
         };
     }
 
-    /**
-     * Return a predicate which rethrows possible checked exceptions as runtime exception.
-     *
-     * @param predicate
-     * @param <T>
-     * @return
-     */
     public static <T> Predicate<T> predicate(CheckedPredicate<T> predicate) {
         return input -> {
             try {
@@ -69,13 +49,6 @@ public final class CheckedFunctions {
         };
     }
 
-    /**
-     * Return a consumer which rethrows possible checked exceptions as runtime exception.
-     *
-     * @param consumer
-     * @param <T>
-     * @return
-     */
     public static <T> Consumer<T> consumer(CheckedConsumer<T> consumer) {
         return input -> {
             try {

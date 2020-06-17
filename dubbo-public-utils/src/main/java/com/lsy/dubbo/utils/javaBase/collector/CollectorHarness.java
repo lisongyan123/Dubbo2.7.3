@@ -1,5 +1,7 @@
 package com.lsy.dubbo.utils.javaBase.collector;
 
+import com.lsy.dubbo.utils.java8.interfaces.PartitionPrimeNumbers;
+
 import java.util.function.Consumer;
 
 public class CollectorHarness {

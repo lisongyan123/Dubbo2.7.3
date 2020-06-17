@@ -1,4 +1,4 @@
-package com.lsy.dubbo.utils.javaBase.collector;
+package com.lsy.dubbo.utils.java8.interfaces;
 
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -6,12 +6,19 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
-
 import static java.util.stream.Collector.Characteristics.CONCURRENT;
 import static java.util.stream.Collector.Characteristics.IDENTITY_FINISH;
 
-public class ToListCollector<T> implements Collector<T, List<T>, List<T>> {
+/**
+ * java8的一些接口理解
+ * @param <T>
+ */
+public class JavaFunction<T> implements Collector<T, List<T>, List<T>> {
 
+    /**
+     * supplier就是新建一个对象 只有调用get的时候才会从内存加载
+     * @return
+     */
     @Override
     public Supplier<List<T>> supplier() {
         return () -> new ArrayList<T>();
@@ -39,4 +46,5 @@ public class ToListCollector<T> implements Collector<T, List<T>, List<T>> {
     public Set<Characteristics> characteristics() {
         return Collections.unmodifiableSet(EnumSet.of(IDENTITY_FINISH, CONCURRENT));
     }
+
 }

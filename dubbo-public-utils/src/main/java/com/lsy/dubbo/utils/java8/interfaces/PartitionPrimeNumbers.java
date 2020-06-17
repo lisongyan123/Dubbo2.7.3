@@ -1,4 +1,4 @@
-package com.lsy.dubbo.utils.javaBase.collector;
+package com.lsy.dubbo.utils.java8.interfaces;
 
 import java.util.*;
 import java.util.function.*;
@@ -13,6 +13,24 @@ public class PartitionPrimeNumbers<T> {
 
     public static void main(String... args) {
         System.out.println("Numbers partitioned in prime and non-prime: " + partitionPrimesWithCustomCollector(100));
+        System.out.println("Numbers partitioned in prime and non-prime: " + partitionPrimesWithInlineCollector(100));
+    }
+
+    public static Map<Boolean, List<Integer>> partitionPrimesWithInlineCollector(int n) {
+        return Stream.iterate(2, i -> i + 1).limit(n)
+                .collect(
+                        () -> new HashMap<Boolean, List<Integer>>() {{
+                            put(true, new ArrayList<Integer>());
+                            put(false, new ArrayList<Integer>());
+                        }},
+                        (acc, candidate) -> {
+                            acc.get( isPrime(acc.get(true), candidate) )
+                                    .add(candidate);
+                        },
+                        (map1, map2) -> {
+                            map1.get(true).addAll(map2.get(true));
+                            map1.get(false).addAll(map2.get(false));
+                        });
     }
 
     public static boolean isPrime(List<Integer> integers, int candidate) {
@@ -28,12 +46,6 @@ public class PartitionPrimeNumbers<T> {
                 .boxed()
                 .collect(new PrimeNumbersCollector());
     }
-
-//    public static boolean isPrime(List<Integer> primes, Integer candidate) {
-//        double candidateRoot = Math.sqrt((double) candidate);
-//        //return takeWhile(primes, i -> i <= candidateRoot).stream().noneMatch(i -> candidate % i == 0);
-//        return primes.stream().takeWhile(i -> i <= candidateRoot).noneMatch(i -> candidate % i == 0);
-//    }
 
     public static <A> List<A> takeWhile(List<A> list, Predicate<A> p) {
         int i = 0;
@@ -85,22 +97,4 @@ public class PartitionPrimeNumbers<T> {
             return Collections.unmodifiableSet(EnumSet.of(IDENTITY_FINISH));
         }
     }
-
-    public Map<Boolean, List<Integer>> partitionPrimesWithInlineCollector(int n) {
-        return Stream.iterate(2, i -> i + 1).limit(n)
-                .collect(
-                        () -> new HashMap<Boolean, List<Integer>>() {{
-                            put(true, new ArrayList<Integer>());
-                            put(false, new ArrayList<Integer>());
-                        }},
-                        (acc, candidate) -> {
-                            acc.get( isPrime(acc.get(true), candidate) )
-                                    .add(candidate);
-                        },
-                        (map1, map2) -> {
-                            map1.get(true).addAll(map2.get(true));
-                            map1.get(false).addAll(map2.get(false));
-                        });
-    }
-
 }

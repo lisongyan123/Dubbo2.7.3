@@ -33,8 +33,7 @@ public class Tuple<A,B> {
          * @param args
          */
         public static void main(String[] args) {
-            Tuple<String, Integer> ttsi = f();
-            System.out.println(ttsi);
+            System.out.println(f());
             // ttsi.a1 = "there"; // 编译错误，因为 final 不能重新赋值
             System.out.println(g());
             System.out.println(h());
@@ -98,6 +97,10 @@ public class Tuple<A,B> {
     static class Tuple2<A,B,C> extends Tuple<A,B> {
 
         public final C c;
+
+
+
+
         public Tuple2(A a, B b, C c) {
             super(a, b);
             this.c = c;
