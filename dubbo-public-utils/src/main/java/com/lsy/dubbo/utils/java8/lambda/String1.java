@@ -4,9 +4,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * @author Benjamin Winterberg
- */
 public class String1 {
 
     public static void main(String[] args) {

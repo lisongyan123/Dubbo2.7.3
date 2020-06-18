@@ -4,9 +4,9 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
- * Function只接收一个参数
+ * Function只接收一个参数 BiFunction俩
  */
-public class Functions {
+public class TwoFunctions {
     public static void main(String[] args) {
         System.out.println("============Function============");
         Function<Integer,Integer> A= i->i+1;
@@ -17,11 +17,9 @@ public class Functions {
         System.out.println("F2:"+B.andThen(A).apply(5));
 
         System.out.println("============BiFunction============");
-        Functions test = new Functions();
+        TwoFunctions test = new TwoFunctions();
         System.out.println(test.compute(2, 3, (v1, v2) -> v1 + v2, v2 -> v2 * v2));
     }
-
-
 
     public int compute(int a, int b, BiFunction<Integer, Integer, Integer> biFunction, Function<Integer, Integer> function) {
         return biFunction.andThen(function).apply(a, b);

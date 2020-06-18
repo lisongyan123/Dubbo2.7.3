@@ -24,9 +24,7 @@ public class Optional1 {
         System.out.println("===========================");
 
         test();
-        test1();
         test2();
-        test3();
         test4();
 
     }
@@ -69,13 +67,6 @@ public class Optional1 {
                 .ifPresent(System.out::println);
     }
 
-    private static void test3() {
-        IntStream
-                .range(0, 10)
-                .average()
-                .ifPresent(System.out::println);
-    }
-
     private static void test2() {
         IntStream
                 .builder()
@@ -88,14 +79,6 @@ public class Optional1 {
                 .average()
                 .ifPresent(System.out::println);
 
-    }
-
-    private static void test1() {
-        int[] ints = {1, 3, 5, 7, 11};
-        Arrays
-                .stream(ints)
-                .average()
-                .ifPresent(System.out::println);
     }
 
 }

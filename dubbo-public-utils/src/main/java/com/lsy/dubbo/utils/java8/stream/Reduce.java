@@ -3,9 +3,6 @@ package com.lsy.dubbo.utils.java8.stream;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author Benjamin Winterberg
- */
 public class Reduce {
 
     static class Person {

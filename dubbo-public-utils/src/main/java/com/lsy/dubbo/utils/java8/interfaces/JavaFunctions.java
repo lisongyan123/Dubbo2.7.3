@@ -11,7 +11,6 @@ import static java.util.stream.Collector.Characteristics.IDENTITY_FINISH;
 
 /**
  * java8的一些接口理解
- * @param <T>
  */
 public class JavaFunctions<T> implements Collector<T, List<T>, List<T>> {
 

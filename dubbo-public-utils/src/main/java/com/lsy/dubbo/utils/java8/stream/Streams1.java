@@ -21,7 +21,6 @@ public class Streams1 {
         stringCollection.add("bbb2");
         stringCollection.add("ddd1");
 
-
         // filtering
 
         stringCollection

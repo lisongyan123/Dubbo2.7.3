@@ -1,10 +1,10 @@
-package com.lsy.dubbo.utils.java8.lambda;
+package com.lsy.dubbo.utils.java8.pattern;
 
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 
-public class ChainOfResponsibilityMain {
+public class ResponsePattern {
 
     public static void main(String[] args) {
         ProcessingObject<String> p1 = new HeaderTextProcessing();

@@ -1,4 +1,4 @@
-package com.lsy.dubbo.utils.java8.lambda;
+package com.lsy.dubbo.utils.java8.interfaces.functions;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
